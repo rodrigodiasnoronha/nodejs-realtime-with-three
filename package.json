@@ -13,7 +13,8 @@
     "express": "^4.17.1",
     "mime-type": "^3.0.7",
     "serialport": "^9.0.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "three": "^0.118.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
