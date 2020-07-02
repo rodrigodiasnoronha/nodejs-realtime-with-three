@@ -8,10 +8,10 @@ let scene, camera, renderer, container, controls, object;
 let loader = new GLTFLoader();
 loader.load('/models/pot/scene.gltf', (gltf) => {
     let material = new THREE.MeshLambertMaterial({ color: '#e02' });
-    const root = gltf.scene;
+    object = gltf.scene;
 
     init();
-    scene.add(root);
+    scene.add(object);
 });
 
 function init() {
@@ -51,8 +51,8 @@ function animate() {
     requestAnimationFrame(animate);
     socket.on('gyr', (data) => {
         let ang = data.split(' ');
-        document.getElementById('angles').innerText =
-            'X: ' + ang[1] + ' Y: ' + ang[2] + ' Z: ' + ang[3];
+        // document.getElementById('angles').innerText =
+        //     'X: ' + ang[1] + ' Y: ' + ang[2] + ' Z: ' + ang[3];
 
         object.rotation.set(
             (parseInt(ang[1], 10) * Math.PI) / 180,

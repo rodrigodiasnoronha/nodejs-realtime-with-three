@@ -1,3 +1,4 @@
+
 #include <MPU6050_tockn.h>
 #include <Wire.h>
 
@@ -8,15 +9,15 @@ void setup() {
   Wire.begin();
   mpu6050.begin();
   mpu6050.calcGyroOffsets(true);
-  Serial.println();
 }
 
 void loop() {
   mpu6050.update();
-  Serial.print("Data: ");
+  Serial.print("data: ");
   Serial.print(mpu6050.getAngleX());
   Serial.print(" ");
   Serial.print(mpu6050.getAngleY());
   Serial.print(" ");
   Serial.println(mpu6050.getAngleZ());
+  Serial.println("\n");
 }
